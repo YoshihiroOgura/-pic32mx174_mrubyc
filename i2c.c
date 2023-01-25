@@ -21,10 +21,8 @@
 
 void i2c_init() {
     ANSELB &= 0xf3;
-    TRISB |= 0xc;
-    CNPUB |= 0xc;
-    I2C2BRG = 50;
-    I2C2CON = 0x8000;
+    I2C2BRG = 31;
+    I2C2CON = 0x8200;
     I2C2STAT = 0x0;
 }
 

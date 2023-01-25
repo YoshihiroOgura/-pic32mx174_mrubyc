@@ -36,13 +36,12 @@ void __ISR(_UART_2_VECTOR, IPL4AUTO) OnUartReceiving(void)
 }
 
 void uart_init(void){
-   ANSELA = 0x0000;
-   IPC8bits.U1IP = 1;
-   IPC8bits.U1IS = 0;
+   IPC8bits.U1IP = 4;
+   IPC8bits.U1IS = 3;
    TRISAbits.TRISA4 = 1;
    U1RXRbits.U1RXR = 0x0002;   //RA4->UART1:U1RX;
-   RPB4Rbits.RPB4R = 0x0001;   //RB4->UART1:U1TX;
-   U1MODE = 0x8008;
+   RPB7Rbits.RPB7R = 0x0001;   //RB7->UART1:U1TX;
+   U1MODE = 0x0208;
    U1STA = 0x0;
    U1TXREG = 0x0;
    // BaudRate = 19200; Frequency = 40kHz; BRG 129; 

@@ -21,9 +21,9 @@
 
 void timer_init() {
     TMR1 = TMR2 = TMR3 = 0x0;
-    PR1 = PR2 = 10000;
+    PR1 = PR2 = 33;
     PR3 = 10;
-    T1CON = T2CON = T3CON = 0x8000;
+    T1CON = T2CON = T3CON = 0x8202;
 }
 
 /* ============================= mruby/c codes ============================= */
